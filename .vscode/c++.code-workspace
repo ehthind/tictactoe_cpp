@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "/Users/amrit/code/sandbox/c++"
+		}
+	],
+	"settings": {
+		"files.associations": {
+			"string": "cpp",
+			"iosfwd": "cpp"
+		}
+	}
+}
