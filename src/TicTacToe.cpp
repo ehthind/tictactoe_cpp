@@ -10,6 +10,7 @@ TicTacToe::TicTacToe() {
 
 void TicTacToe::play() {
     while (!(this -> isGameOver())) {
+        Clear();
         this -> playersTurn = (playersTurn == "X") ? "O" : "X"; // determine next players move
         this -> board.ToString(); // Display board.
         int position = this -> getPlayersInput();
@@ -47,6 +48,7 @@ bool TicTacToe::isGameOver() {
             this -> board.getValueAtPosition(i+1) +
             this -> board.getValueAtPosition(i+2) == winningCondition
         ) {
+            Clear();
             cout << "Game over, " << this -> playersTurn << " wins!" << endl;
             return true;
         }
@@ -58,6 +60,7 @@ bool TicTacToe::isGameOver() {
             this -> board.getValueAtPosition(i+3) +
             this -> board.getValueAtPosition(i+6) == winningCondition
         ) {
+            Clear();
             cout << "Game over, " << this -> playersTurn << " wins!" << endl;
             return true;
         }
@@ -73,11 +76,13 @@ bool TicTacToe::isGameOver() {
         this -> board.getValueAtPosition(6) == winningCondition)
         ) 
     {
+        Clear();
         cout << "Game over, " << this -> playersTurn << " wins!" << endl;
         return true;
     }
     
     if (this -> numberOfTurns == 9) {
+        Clear();
         cout << "Tie game!" << endl;
         return true;
     }
@@ -95,4 +100,14 @@ bool TicTacToe::isMoveValid(int position) {
     }
 
     return false;
+}
+
+void Clear() {
+    #if defined _WIN32
+        system("cls");
+    #elif defined (__LINUX__) || defined(__gnu_linux__) || defined(__linux__)
+        system("clear");
+    #elif defined (__APPLE__)
+        system("clear");
+    #endif
 }
