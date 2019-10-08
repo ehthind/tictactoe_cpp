@@ -11,6 +11,8 @@
                 "-std=c++17",
                 "-stdlib=libc++",
                 "src/main.cpp",
+                "src/TicTacToe.cpp",
+                "src/Board.cpp",
                 "-o",
                 "src/main.out",
                 "--debug"
@@ -18,6 +20,14 @@
             "group": {
                 "kind": "build",
                 "isDefault": true
+            },
+            "presentation": {
+                "echo": true,
+                "reveal": "never",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": true,
+                "clear": true
             }
         }
     ]
